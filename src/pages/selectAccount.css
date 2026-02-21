@@ -1,0 +1,24 @@
+.account-container{
+  width: 350px;
+  margin: auto;
+}
+
+.account-card{
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #fff;
+}
+
+.account-card:hover{
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.balance{
+  font-weight: bold;
+  color: green;
+}
