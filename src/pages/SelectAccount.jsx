@@ -3,13 +3,12 @@ import { useNavigate } from "react-router-dom";
 import api from '../../api';
 import './selectAccount.css';
 
+
 export function SelectAccount() {
 
     const [accounts, setAccounts] = useState([]);
     const [loaded, setLoaded] = useState(false);
     const navigate = useNavigate();
-
-
 
    useEffect(() => {
 
@@ -21,14 +20,14 @@ export function SelectAccount() {
       setAccounts(accs);
       setLoaded(true);
 
-      // ⭐ redirect decision HERE (not second effect)
+      
       if ( loaded && accs.length === 0) {
         navigate("/open-account", { replace: true });
       }
 
     } catch (err) {
 
-      // token expired
+      
       if (err.response?.status === 401) {
         localStorage.removeItem("token");
         navigate("/login", { replace: true });
@@ -43,7 +42,8 @@ export function SelectAccount() {
 }, [navigate,loaded]);
 
 
-    return (
+    return (<>
+      
          <div className="account-container">
     <h2>Select Your Account</h2>
 
@@ -52,8 +52,7 @@ export function SelectAccount() {
         key={acc.accountNumber}
         className="account-card"
         onClick={() => {
-          localStorage.setItem("account", JSON.stringify(acc));
-          navigate("/dashboard");
+          navigate("/dashboard" ,{state:{ accountNumber: acc.accountNumber }});
         }}
       >
         <h3>{acc.accountType} Account</h3>
@@ -68,6 +67,8 @@ export function SelectAccount() {
       </div>
     ))}
   </div>
+ 
+  </>
 
     );
 }

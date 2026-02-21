@@ -13,8 +13,10 @@ export function Login() {
     try {
       const res = await api.post("/login", { username, password });
 
-     
-      localStorage.setItem("token", res.data);
+
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("username", res.data.username);
+
 
       navigate("/select-account");
     } catch {
@@ -22,44 +24,44 @@ export function Login() {
     }
   };
 
-return (
-  <div className="login-page">
-    <div className="login-card">
+  return (
+    <div className="login-page">
+      <div className="login-card">
 
-      <h2 className="login-title">Welcome Back</h2>
-      <p className="login-subtitle">Login to your account</p>
+        <h2 className="login-title">Welcome Back</h2>
+        <p className="login-subtitle">Login to your account</p>
 
-      <input
-        className="login-input"
-        onChange={e => setUsername(e.target.value)}
-        placeholder="Username"
-      />
+        <input
+          className="login-input"
+          onChange={e => setUsername(e.target.value)}
+          placeholder="Username"
+        />
 
-      <input
-        className="login-input"
-        type="password"
-        onChange={e => setPassword(e.target.value)}
-        placeholder="Password"
-      />
+        <input
+          className="login-input"
+          type="password"
+          onChange={e => setPassword(e.target.value)}
+          placeholder="Password"
+        />
 
-      <button className="login-btn" onClick={handleLogin}>
-        Login
-      </button>
+        <button className="login-btn" onClick={handleLogin}>
+          Login
+        </button>
 
-      <p className="login-footer">
-        New user?{" "}
-        <span
-          className="login-link"
-          onClick={() => navigate("/register")}
-        >
-          Register
-        </span>
-      </p>
+        <p className="login-footer">
+          New user?{" "}
+          <span
+            className="login-link"
+            onClick={() => navigate("/register")}
+          >
+            Register
+          </span>
+        </p>
 
-      
 
+
+      </div>
     </div>
-  </div>
-);
+  );
 
 }

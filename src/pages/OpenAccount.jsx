@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api from '../../api';
 
 
+
 export function OpenAccount(){
     const[accountType,setAccountType]=useState('SAVINGS');
     const[accountPurpose,setAccountPurpose]=useState('PERSONAL');
@@ -26,6 +27,8 @@ export function OpenAccount(){
     
 
     return(
+      <>
+     
         <div>
             <form onSubmit={handleOpenAccount}>
 
@@ -64,5 +67,7 @@ export function OpenAccount(){
       <button type="submit">Create Account</button>
     </form>
         </div>
+       
+        </>
     );
 }
