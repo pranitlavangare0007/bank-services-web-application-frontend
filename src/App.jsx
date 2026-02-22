@@ -8,7 +8,9 @@ import { SelectAccount } from "./pages/SelectAccount";
 import { OpenAccount } from "./pages/OpenAccount";
 import { PageNotFound } from "./pages/PageNotFound";
 import{Layout} from './components/Layout'
-
+import { TransactionSuccess } from "./pages/TransactionSuccess";
+import { Deposit } from "./pages/Deposit";
+import{Withdraw} from './pages/Withdraw'
 function App() {
 
 
@@ -27,6 +29,9 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/select-account" element={<SelectAccount />} />
           <Route path="/open-account" element={<OpenAccount />} />
+          <Route path="/deposit" element={<Deposit />} />
+          <Route path="/withdraw" element={<Withdraw />} />
+          <Route path="/transaction-success" element={<TransactionSuccess />} />
         </Route>
 
         <Route path="/" element={<Navigate to="/login" />} />

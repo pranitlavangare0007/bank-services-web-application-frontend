@@ -44,90 +44,98 @@ export function Dashboard() {
   }
 
   return (
-  <>
-  
+    <>
 
-    <div className="dashboard-container">
 
-     
-      <section className="account-summary-section">
+      <div className="dashboard-container">
 
-        <div className="account-card-main">
 
-          <div className="account-header">
-            <h2 className="account-type">
-              {account.accountType} Account
-            </h2>
-            <span className="account-status">
-              {account.accountStatus}
-            </span>
+        <section className="account-summary-section">
+
+          <div className="account-card-main">
+
+            <div className="account-header">
+              <h2 className="account-type">
+                {account.accountType} Account
+              </h2>
+              <span className="account-status">
+                {account.accountStatus}
+              </span>
+            </div>
+
+            <p className="account-number">
+              Account No: •••• {String(account.accountNumber).slice(-4)}
+            </p>
+
+            <h3 className="account-balance">
+              ₹ {account.balance}
+            </h3>
+
+            <p className="upi-id">
+              UPI ID: {account.upiId}
+            </p>
+
           </div>
 
-          <p className="account-number">
-            Account No: •••• {String(account.accountNumber).slice(-4)}
-          </p>
+        </section>
 
-          <h3 className="account-balance">
-            ₹ {account.balance}
-          </h3>
 
-          <p className="upi-id">
-            UPI ID: {account.upiId}
-          </p>
+        <section className="actions-section">
 
-        </div>
+          <h3 className="section-title">Quick Services</h3>
 
-      </section>
+          <div className="actions">
 
-     
-      <section className="actions-section">
+            <button
+              className="action-card"
+              onClick={() => navigate("/open-account")}
+            >
+              Open Account
 
-        <h3 className="section-title">Quick Services</h3>
+            </button>
 
-        <div className="actions">
+            <button
+              className="action-card"
+              onClick={() => navigate("/deposit", { state: { accountNumber: accNum } })}
+            >
+              Deposite Money
+            </button>
 
-          <button
-            className="action-card"
-            onClick={() => navigate("/open-account")}
-          >
-            Open Account
-           
-          </button>
+            <button
+              className="action-card"
+              onClick={() => navigate("/withdraw", { state: { accountNumber: accNum } })}
+            >
+              Withdraw Money
+            </button>
 
-          <button
-            className="action-card"
-            onClick={() => navigate("/deposit")}
-          >
-           Deposite Mpney
-          </button>
+            <button
+              className="action-card"
+              onClick={() => navigate("/withdraw", { state: { accountNumber: accNum } })}
+            >
+              UPI Transfer
+            </button>
 
-          <button
-            className="action-card"
-            onClick={() => navigate("/withdraw")}
-          >
-           Withdraw Money
-          </button>
+            <button
+              className="action-card"
+              onClick={() => navigate("/withdraw", { state: { accountNumber: accNum } })}
+            >
+             IMPS Transfer
+            </button>
 
-          <button
-            className="action-card"
-            onClick={() => navigate("/transfer")}
-          >
-            Transfer Money
-          </button>
 
-          <button
-            className="action-card"
-            onClick={() => navigate("/statement")}
-          >
-            Account Statement
-          </button>
+            <button
+              className="action-card"
+              onClick={() => navigate("/statement")}
+            >
+              Account Statement
+            </button>
 
-        </div>
+          </div>
 
-      </section>
+        </section>
 
-    </div>
-   
-  </>
-);
+      </div>
+
+    </>
+  );
 }
