@@ -46,7 +46,7 @@ export function SelectAccount() {
       
          <div className="account-container">
     <h2>Select Your Account</h2>
-
+ 
     {accounts.map(acc => (
       <div
         key={acc.accountNumber}
@@ -55,10 +55,12 @@ export function SelectAccount() {
           navigate("/dashboard" ,{state:{ accountNumber: acc.accountNumber }});
         }}
       >
+       
         <h3>{acc.accountType} Account</h3>
 
         <p>
           Account: •••• {acc.accountNumber.slice(-4)}
+          {console.log(acc.accountNumber)}
         </p>
 
         <p className="balance">
@@ -66,6 +68,8 @@ export function SelectAccount() {
         </p>
       </div>
     ))}
+
+    
   </div>
  
   </>

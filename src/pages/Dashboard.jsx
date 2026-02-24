@@ -117,7 +117,7 @@ export function Dashboard() {
 
             <button
               className="action-card"
-              onClick={() => navigate("/withdraw", { state: { accountNumber: accNum } })}
+              onClick={() => navigate("/imps-transfer", { state: { accountNumber: accNum } })}
             >
              IMPS Transfer
             </button>
