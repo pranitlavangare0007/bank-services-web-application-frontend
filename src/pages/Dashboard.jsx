@@ -110,7 +110,7 @@ export function Dashboard() {
 
             <button
               className="action-card"
-              onClick={() => navigate("/withdraw", { state: { accountNumber: accNum } })}
+              onClick={() => navigate("/upi-transfer", { state: { accountNumber: accNum } })}
             >
               UPI Transfer
             </button>

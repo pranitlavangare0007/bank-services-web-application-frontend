@@ -12,6 +12,8 @@ import { TransactionSuccess } from "./pages/TransactionSuccess";
 import { Deposit } from "./pages/Deposit";
 import{Withdraw} from './pages/Withdraw'
 import { ImpsTransfer } from "./pages/ImpsTransfer";
+import { UpiTransfer } from "./pages/UpiTransfer";
+
 function App() {
 
 
@@ -32,7 +34,8 @@ function App() {
           <Route path="/open-account" element={<OpenAccount />} />
           <Route path="/deposit" element={<Deposit />} />
           <Route path="/withdraw" element={<Withdraw />} />
-           <Route path="/imps-transfer" element={<ImpsTransfer />} />
+          <Route path="/imps-transfer" element={<ImpsTransfer />} />
+          <Route path="/upi-transfer" element={<UpiTransfer />} />
           <Route path="/transaction-success" element={<TransactionSuccess />} />
         </Route>
 

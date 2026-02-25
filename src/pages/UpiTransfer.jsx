@@ -3,11 +3,11 @@ import { useState } from "react";
 import api from '../../api';
 
 
-export function ImpsTransfer() {
+export function UpiTransfer() {
     const [amount, setAmount] = useState(0);
     const [mpin, setMpin] = useState("");
-    const [accountNumberReceiver, setAccountNumberReceiver] = useState("")
-    const [channel] = useState("IMPS")
+    const [upiId, setUpiId] = useState("")
+    const [channel] = useState("UPI")
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -17,10 +17,10 @@ export function ImpsTransfer() {
 
 
 
-    async function handelImpsTransfer(event) {
+    async function handelUpiTransfer(event) {
         event.preventDefault();
         try {
-            const response = await api.patch(`/accounts/${accNum}/transfer`, { mpin, amount, channel,accountNumberReceiver })
+            const response = await api.patch(`/accounts/${accNum}/transfer`, { mpin, amount, channel,upiId })
 
             navigate("/transaction-success", { state: { transaction: response.data } })
 
@@ -38,13 +38,13 @@ export function ImpsTransfer() {
     return (
         <div>
 
-            <form onSubmit={handelImpsTransfer}>
+            <form onSubmit={handelUpiTransfer}>
 
                 <input
                     className=""
                     type="text"
-                    onChange={e => setAccountNumberReceiver(e.target.value)}
-                    placeholder="Enter Account Number of Reciver"
+                    onChange={e => setUpiId(e.target.value)}
+                    placeholder="Enter upiId of Reciver"
                     required
                 />
 
