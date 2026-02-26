@@ -13,7 +13,7 @@ import { Deposit } from "./pages/Deposit";
 import{Withdraw} from './pages/Withdraw'
 import { ImpsTransfer } from "./pages/ImpsTransfer";
 import { UpiTransfer } from "./pages/UpiTransfer";
-
+import { AccountStatement } from "./pages/AccountStatement";
 function App() {
 
 
@@ -23,11 +23,11 @@ function App() {
 
       <Routes>
 
-        {/* routes WITHOUT header/footer */}
+        
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* routes WITH header/footer */}
+        
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/select-account" element={<SelectAccount />} />
@@ -36,6 +36,7 @@ function App() {
           <Route path="/withdraw" element={<Withdraw />} />
           <Route path="/imps-transfer" element={<ImpsTransfer />} />
           <Route path="/upi-transfer" element={<UpiTransfer />} />
+          <Route path="/statement" element={<AccountStatement />} />
           <Route path="/transaction-success" element={<TransactionSuccess />} />
         </Route>
 
@@ -46,19 +47,7 @@ function App() {
 
     </BrowserRouter>
 
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/login" element={<Login />}></Route>
-    //     <Route path="/register" element={<Register />} />
-    //     <Route path="/dashboard" element={<Dashboard />} />
-    //     <Route path="/select-account" element={<SelectAccount />} />
-    //     <Route path="/open-account" element={<OpenAccount />} />
-    //     <Route path="/" element={<Navigate to="/login" />} />
-    //     <Route path="*" element={<PageNotFound />} />
-    //   </Routes>
-    // </BrowserRouter>
-
-
+  
   )
 }
 

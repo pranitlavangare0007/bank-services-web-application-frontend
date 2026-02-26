@@ -125,7 +125,7 @@ export function Dashboard() {
 
             <button
               className="action-card"
-              onClick={() => navigate("/statement")}
+              onClick={() => navigate("/statement", { state: { accountNumber: accNum } } )}
             >
               Account Statement
             </button>
