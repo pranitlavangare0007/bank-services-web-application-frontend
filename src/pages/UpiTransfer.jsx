@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useState } from "react";
 import api from '../../api';
 
@@ -8,12 +8,11 @@ export function UpiTransfer() {
     const [mpin, setMpin] = useState("");
     const [upiId, setUpiId] = useState("")
     const [channel] = useState("UPI")
-    const location = useLocation();
+  
     const navigate = useNavigate();
 
-    const accNum =
-        location.state?.accountNumber ||
-        localStorage.getItem("accountNumber");
+   const accNum =
+    sessionStorage.getItem("selectedAccount");
 
 
 

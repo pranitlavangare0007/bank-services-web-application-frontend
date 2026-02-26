@@ -16,7 +16,7 @@ export function Login() {
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("username", res.data.username);
-
+      sessionStorage.removeItem("selectedAccount");
 
       navigate("/select-account");
     } catch {

@@ -1,16 +1,16 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useState,useEffect } from "react";
 import api from '../../api';
 import '../styles/statement.css'
 
 
-export function AccountStatement(){
+export function Transactions(){
 
 
-    const location = useLocation();
+   
     const navigate = useNavigate();
 
-    const accountNumber = location.state?.accountNumber;
+    const accountNumber = sessionStorage.getItem("selectedAccount");
 
     const [fromDate,setFromDate] = useState("");
     const [toDate,setToDate] = useState("");
@@ -24,7 +24,7 @@ export function AccountStatement(){
     },[accountNumber,navigate]);
 
 
-    const fetchStatement = async(e)=>{
+    const fetchTransactions = async(e)=>{
         e.preventDefault();
 
         if(!fromDate || !toDate){
@@ -68,8 +68,8 @@ export function AccountStatement(){
 
             <h2>Account Statement</h2>
 
-            {/* Date Filter */}
-            <form className="statement-filter" onSubmit={fetchStatement}>
+        
+            <form className="statement-filter" onSubmit={fetchTransactions}>
                 <div>
                     <label>From</label>
                     <input
@@ -93,7 +93,7 @@ export function AccountStatement(){
 
             {loading && <p>Loading statement...</p>}
 
-            {/* Statement Data */}
+           
             {statement && (
                 <div className="statement-result">
 

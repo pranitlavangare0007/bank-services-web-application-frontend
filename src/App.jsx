@@ -13,7 +13,9 @@ import { Deposit } from "./pages/Deposit";
 import{Withdraw} from './pages/Withdraw'
 import { ImpsTransfer } from "./pages/ImpsTransfer";
 import { UpiTransfer } from "./pages/UpiTransfer";
-import { AccountStatement } from "./pages/AccountStatement";
+import { Transactions } from "./pages/Transactions";
+import { AccountProtectedRoute } from "./components/AccountProtectedRoute";
+import { Profile } from "./pages/profile";
 function App() {
 
 
@@ -29,15 +31,16 @@ function App() {
 
         
         <Route element={<Layout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<AccountProtectedRoute><Profile /></AccountProtectedRoute>} />
+          <Route path="/dashboard" element={<AccountProtectedRoute><Dashboard /></AccountProtectedRoute>} />
           <Route path="/select-account" element={<SelectAccount />} />
-          <Route path="/open-account" element={<OpenAccount />} />
-          <Route path="/deposit" element={<Deposit />} />
-          <Route path="/withdraw" element={<Withdraw />} />
-          <Route path="/imps-transfer" element={<ImpsTransfer />} />
-          <Route path="/upi-transfer" element={<UpiTransfer />} />
-          <Route path="/statement" element={<AccountStatement />} />
-          <Route path="/transaction-success" element={<TransactionSuccess />} />
+          <Route path="/open-account" element={<AccountProtectedRoute><OpenAccount /></AccountProtectedRoute>} />
+          <Route path="/deposit" element={<AccountProtectedRoute><Deposit /></AccountProtectedRoute>} />
+          <Route path="/withdraw" element={<AccountProtectedRoute><Withdraw /></AccountProtectedRoute>} />
+          <Route path="/imps-transfer" element={<AccountProtectedRoute><ImpsTransfer /></AccountProtectedRoute>} />
+          <Route path="/upi-transfer" element={<AccountProtectedRoute><UpiTransfer /></AccountProtectedRoute>} />
+          <Route path="/transactions" element={<AccountProtectedRoute><Transactions /></AccountProtectedRoute>} />
+          <Route path="/transaction-success" element={<AccountProtectedRoute><TransactionSuccess /></AccountProtectedRoute>} />
         </Route>
 
         <Route path="/" element={<Navigate to="/login" />} />

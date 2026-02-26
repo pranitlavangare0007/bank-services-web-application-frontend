@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import './transactionSuccess.css'
+import '../styles/transactionSuccess.css'
 
 export  function TransactionSuccess() {
 

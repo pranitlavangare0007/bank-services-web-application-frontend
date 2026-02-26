@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="footer">
       <div className="footer-container">
 
-        {/* Brand */}
+        
         <div className="footer-section">
           <h2 className="footer-logo">PayPulse</h2>
           <p className="footer-desc">
@@ -17,16 +17,17 @@ export function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
+        
         <div className="footer-section">
           <h3>Quick Links</h3>
           <Link to="/dashboard">Dashboard</Link>
-          <Link to="/transfer">Fund Transfer</Link>
+          <Link to="/imps-transfer">IMPS Transfer</Link>
+           <Link to="/upi-transfer">UPI Transfer</Link>
           <Link to="/transactions">Transactions</Link>
           <Link to="/profile">Profile</Link>
         </div>
 
-        {/* Services */}
+       
         <div className="footer-section">
           <h3>Services</h3>
           <p>UPI Payments</p>
@@ -35,7 +36,7 @@ export function Footer() {
           <p>Account Security</p>
         </div>
 
-        {/* Security */}
+        
         <div className="footer-section">
           <h3>Security</h3>
           <p>🔒 256-bit Encrypted</p>

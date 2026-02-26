@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from '../../api';
-import './selectAccount.css';
+import '../styles/selectAccount.css';
 
 
 export function SelectAccount() {
@@ -52,7 +52,8 @@ export function SelectAccount() {
         key={acc.accountNumber}
         className="account-card"
         onClick={() => {
-          navigate("/dashboard" ,{state:{ accountNumber: acc.accountNumber }});
+          sessionStorage.setItem("selectedAccount", acc.accountNumber);
+          navigate("/dashboard");
         }}
       >
        

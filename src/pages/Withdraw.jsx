@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useState } from "react";
 import api from '../../api';
 
@@ -7,12 +7,11 @@ export function Withdraw() {
   const [amount, setAmount] = useState(0);
   const [mpin, setMpin] = useState("");
   const [channel] = useState("CASH")
-  const location = useLocation();
+
   const navigate = useNavigate();
 
   const accNum =
-    location.state?.accountNumber ||
-    localStorage.getItem("accountNumber");
+    sessionStorage.getItem("selectedAccount");
 
 
 

@@ -8,7 +8,7 @@ export  function Header() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("accountNumber");
+    sessionStorage.removeItem("selectedAccount");
     localStorage.removeItem("username");
     navigate("/login");
   };
@@ -17,7 +17,9 @@ export  function Header() {
     <header className="header">
       
       
-      <div className="logo" onClick={() => navigate("/dashboard")}>
+      <div className="logo" onClick={() => 
+        
+        navigate("/dashboard" )}>
        payPulse
       </div>
 

@@ -1,21 +1,20 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from '../../api';
 
 
-import './dashboard.css'
+import '../styles/dashboard.css'
 
 export function Dashboard() {
 
   const [account, setAccount] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const location = useLocation();
+
   const navigate = useNavigate();
 
   const accNum =
-    location.state?.accountNumber ||
-    localStorage.getItem("accountNumber");
+    sessionStorage.getItem("selectedAccount");
 
   useEffect(() => {
 
@@ -96,28 +95,28 @@ export function Dashboard() {
 
             <button
               className="action-card"
-              onClick={() => navigate("/deposit", { state: { accountNumber: accNum } })}
+              onClick={() => navigate("/deposit")}
             >
               Deposite Money
             </button>
 
             <button
               className="action-card"
-              onClick={() => navigate("/withdraw", { state: { accountNumber: accNum } })}
+              onClick={() => navigate("/withdraw")}
             >
               Withdraw Money
             </button>
 
             <button
               className="action-card"
-              onClick={() => navigate("/upi-transfer", { state: { accountNumber: accNum } })}
+              onClick={() => navigate("/upi-transfer")}
             >
               UPI Transfer
             </button>
 
             <button
               className="action-card"
-              onClick={() => navigate("/imps-transfer", { state: { accountNumber: accNum } })}
+              onClick={() => navigate("/imps-transfer")}
             >
              IMPS Transfer
             </button>
@@ -125,9 +124,9 @@ export function Dashboard() {
 
             <button
               className="action-card"
-              onClick={() => navigate("/statement", { state: { accountNumber: accNum } } )}
+              onClick={() => navigate("/transactions" )}
             >
-              Account Statement
+             Transactions
             </button>
 
           </div>

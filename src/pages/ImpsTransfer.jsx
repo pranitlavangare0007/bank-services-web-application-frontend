@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useState } from "react";
 import api from '../../api';
 
@@ -8,12 +8,11 @@ export function ImpsTransfer() {
     const [mpin, setMpin] = useState("");
     const [accountNumberReceiver, setAccountNumberReceiver] = useState("")
     const [channel] = useState("IMPS")
-    const location = useLocation();
+    
     const navigate = useNavigate();
 
     const accNum =
-        location.state?.accountNumber ||
-        localStorage.getItem("accountNumber");
+    sessionStorage.getItem("selectedAccount");
 
 
 
