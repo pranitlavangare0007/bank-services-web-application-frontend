@@ -24,10 +24,9 @@ export function Deposit() {
      
 
 
-    } catch (err) {
-      alert("Deposit Failed")
-      console.log(err)
-      navigate("/dashboard", { replace: true });
+    } catch (err) 
+    {
+        console.log("Deposite Failed " , err)
     }
   };
 

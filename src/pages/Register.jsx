@@ -22,8 +22,8 @@ export  function Register() {
       navigate("/login");
      }
       
-    } catch {
-      alert("User already exists");
+    } catch(err) {
+     console.log("User already exists" ,err);
     }
   };
 

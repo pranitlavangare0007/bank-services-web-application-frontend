@@ -32,7 +32,7 @@ export function SelectAccount() {
         localStorage.removeItem("token");
         navigate("/login", { replace: true });
       } else {
-        console.log(err);
+        console.log("account not found",err);
       }
     }
   };

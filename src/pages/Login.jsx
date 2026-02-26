@@ -20,7 +20,7 @@ export function Login() {
 
       navigate("/select-account");
     } catch {
-      alert("Invalid username or password");
+      console.log("Invalid username or password");
     }
   };
 

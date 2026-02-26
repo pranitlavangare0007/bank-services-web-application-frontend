@@ -23,12 +23,10 @@ export function ImpsTransfer() {
 
             navigate("/transaction-success", { state: { transaction: response.data } })
 
-
-
         } catch (err) {
-            alert("Withdraw Failed")
-            console.log(err)
-            navigate("/dashboard", { replace: true });
+           
+            console.log("Withdraw Failed" ,err)
+           
         }
     };
 

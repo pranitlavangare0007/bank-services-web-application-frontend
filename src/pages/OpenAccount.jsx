@@ -19,8 +19,8 @@ export function OpenAccount(){
       navigate("/select-account");
         }
         catch(err){
-            console.log(err)
-             alert("Account creation failed");
+            console.log("Account creation failed" ,err)
+             
         }
     }
 

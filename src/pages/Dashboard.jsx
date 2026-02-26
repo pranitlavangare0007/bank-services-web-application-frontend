@@ -29,8 +29,7 @@ export function Dashboard() {
         setAccount(response.data);
         setLoading(false);
       } catch (err) {
-        console.log(err);
-        navigate("/select-account", { replace: true });
+        console.log("Account Not Found" , err)
       }
     };
 

@@ -8,7 +8,7 @@ const api = axios.create({
 api.interceptors.request.use(config => {
   const url = config.url || "";
 
-  const isPublic = ["/login", "/register", "/oauth2", "/oauth-success"]
+  const isPublic = ["/login", "/register"]
     .some(p => url.startsWith(p));
 
   if (!isPublic) {
@@ -20,5 +20,20 @@ api.interceptors.request.use(config => {
 
   return config;
 });
+
+api.interceptors.response.use(
+  res => res,
+  err => {
+    const msg = err?.response?.data?.message;
+
+    if(msg){
+      alert(msg);
+    }else{
+      alert("Server not reachable");
+    }
+
+    return Promise.reject(err);
+  }
+);
 
 export default api;

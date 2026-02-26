@@ -34,7 +34,7 @@ function App() {
           <Route path="/profile" element={<AccountProtectedRoute><Profile /></AccountProtectedRoute>} />
           <Route path="/dashboard" element={<AccountProtectedRoute><Dashboard /></AccountProtectedRoute>} />
           <Route path="/select-account" element={<SelectAccount />} />
-          <Route path="/open-account" element={<AccountProtectedRoute><OpenAccount /></AccountProtectedRoute>} />
+          <Route path="/open-account" element={<OpenAccount />} />
           <Route path="/deposit" element={<AccountProtectedRoute><Deposit /></AccountProtectedRoute>} />
           <Route path="/withdraw" element={<AccountProtectedRoute><Withdraw /></AccountProtectedRoute>} />
           <Route path="/imps-transfer" element={<AccountProtectedRoute><ImpsTransfer /></AccountProtectedRoute>} />

@@ -46,7 +46,7 @@ export function Transactions(){
             setStatement(response.data);
         }
         catch(err){
-            alert(err?.response?.data?.message || "Failed to fetch statement");
+           console.log( "Failed to fetch statement" ,err);
         }
         finally{
             setLoading(false);

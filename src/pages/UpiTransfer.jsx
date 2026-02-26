@@ -26,9 +26,8 @@ export function UpiTransfer() {
 
 
         } catch (err) {
-            alert("Withdraw Failed")
-            console.log(err)
-            navigate("/dashboard", { replace: true });
+            console.log("Upi transfer Failed" ,err)
+           
         }
     };
 

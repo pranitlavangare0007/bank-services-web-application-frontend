@@ -15,7 +15,7 @@ export function Profile(){
                 setProfile(response.data);
             }
             catch(err){
-                alert("Failed to load profile");
+                console.log("Failed to load profile" ,err);
             }
             finally{
                 setLoading(false);
