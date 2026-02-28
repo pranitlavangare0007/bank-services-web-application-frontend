@@ -1,0 +1,133 @@
+/* PAGE */
+
+.withdraw-page{
+  background:#f3f6fb;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:50px 20px;
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* MAIN CARD */
+
+.withdraw-container{
+  width:500px;
+  background:white;
+  padding:38px 42px;
+  border-radius:18px;
+  box-shadow:0 14px 35px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+
+.withdraw-header{
+  text-align:center;
+  margin-bottom:28px;
+}
+
+.withdraw-header h2{
+  margin:0;
+  color:#111827;
+}
+
+.withdraw-header p{
+  color:#6b7280;
+  font-size:14px;
+  margin-top:6px;
+}
+
+/* ACCOUNT INFO */
+
+.account-info{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:22px;
+  text-align:center;
+}
+
+.account-info p{
+  margin:0;
+  font-size:13px;
+  color:#6b7280;
+}
+
+.account-info h3{
+  margin:6px 0 0;
+  font-size:22px;
+  color:#111827;
+  letter-spacing:2px;
+}
+
+/* FORM */
+
+.withdraw-form{
+  display:flex;
+  flex-direction:column;
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group label{
+  font-size:13px;
+  font-weight:600;
+  color:#374151;
+  margin-bottom:6px;
+  display:block;
+}
+
+.form-group input{
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid #d1d5db;
+  background:#fafafa;
+  transition:0.25s;
+  font-size:14px;
+}
+
+.form-group input:focus{
+  outline:none;
+  border-color:#ef4444;
+  background:white;
+  box-shadow:0 0 0 3px rgba(239,68,68,0.15);
+}
+
+/* WARNING */
+
+.withdraw-warning{
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+  color:#9a3412;
+  padding:12px;
+  border-radius:10px;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.withdraw-btn{
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#ef4444,#dc2626);
+  color:white;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.withdraw-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(239,68,68,0.35);
+}
+
+.withdraw-btn:active{
+  transform:scale(0.97);
+}

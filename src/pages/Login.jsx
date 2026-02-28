@@ -24,44 +24,88 @@ export function Login() {
     }
   };
 
-  return (
-    <div className="login-page">
-      <div className="login-card">
 
-        <h2 className="login-title">Welcome Back</h2>
-        <p className="login-subtitle">Login to your account</p>
+return (
+  <div className="bank-login-page">
 
+    {/* LEFT SIDE — BRANDING */}
+    <div className="bank-login-left">
+
+      <div className="brand">
+        <h1 className="brand-logo">PayPulse</h1>
+        <p className="brand-tagline">
+          Secure Digital Banking Platform
+        </p>
+      </div>
+
+      <div className="bank-features">
+        <div className="feature">
+          <h3>Instant Transfers</h3>
+          <p>UPI & IMPS payments anytime</p>
+        </div>
+
+        <div className="feature">
+          <h3>Real-time Statements</h3>
+          <p>Track every transaction instantly</p>
+        </div>
+
+        <div className="feature">
+          <h3>Secure Authentication</h3>
+          <p>JWT + MPIN protected banking</p>
+        </div>
+      </div>
+
+    </div>
+
+    {/* RIGHT SIDE — LOGIN FORM */}
+    <div className="bank-login-right">
+
+      <form className="login-form" onSubmit={(e) => {
+        e.preventDefault();
+        handleLogin();
+      }}>
+
+        <h2 className="login-title">Sign in to PayPulse</h2>
+        <p className="login-subtitle">Enter your credentials to continue</p>
+
+        <label>Username</label>
         <input
           className="login-input"
-          onChange={e => setUsername(e.target.value)}
-          placeholder="Username"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          autoComplete="username"
+          required
         />
 
+        <label>Password</label>
         <input
           className="login-input"
           type="password"
-          onChange={e => setPassword(e.target.value)}
-          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          autoComplete="current-password"
+          required
         />
 
-        <button className="login-btn" onClick={handleLogin}>
-          Login
+        <button className="login-btn" type="submit">
+          Login Securely
         </button>
 
         <p className="login-footer">
-          New user?{" "}
+          New user?
           <span
             className="login-link"
             onClick={() => navigate("/register")}
           >
-            Register
+            Create account
           </span>
         </p>
 
+      </form>
 
-
-      </div>
     </div>
-  );
 
+  </div>
+);
 }

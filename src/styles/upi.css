@@ -1,0 +1,162 @@
+/* PAGE */
+
+.upi-page{
+  background:#f3f6fb;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:50px 20px;
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* MAIN CARD */
+
+.upi-container{
+  width:500px;
+  background:white;
+  padding:36px 40px;
+  border-radius:18px;
+  box-shadow:0 14px 35px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+
+.upi-header{
+  text-align:center;
+  margin-bottom:26px;
+}
+
+.upi-header h2{
+  margin:0;
+  font-size:24px;
+  color:#111827;
+}
+
+.upi-header p{
+  margin-top:6px;
+  font-size:14px;
+  color:#6b7280;
+}
+
+/* ACCOUNT BOX */
+
+.upi-account-box{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:24px;
+  text-align:center;
+}
+
+.upi-account-box span{
+  font-size:12px;
+  color:#6b7280;
+}
+
+.upi-account-box p{
+  margin:6px 0 0;
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:2px;
+  color:#111827;
+}
+
+/* FORM */
+
+.upi-form{
+  display:flex;
+  flex-direction:column;
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group label{
+  font-size:13px;
+  font-weight:600;
+  color:#374151;
+  margin-bottom:6px;
+  display:block;
+}
+
+.form-group input{
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid #d1d5db;
+  background:#fafafa;
+  font-size:14px;
+  transition:0.25s;
+}
+
+.form-group input:focus{
+  outline:none;
+  border-color:#22c55e;
+  background:white;
+  box-shadow:0 0 0 3px rgba(34,197,94,0.18);
+}
+
+/* AMOUNT BOX */
+
+.amount-box{
+  position:relative;
+}
+
+.amount-box span{
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#6b7280;
+  font-weight:600;
+}
+
+.amount-box input{
+  padding-left:30px;
+}
+
+/* SECURITY NOTE */
+
+.upi-security{
+  font-size:12px;
+  color:#16a34a;
+  background:#f0fdf4;
+  border:1px solid #bbf7d0;
+  padding:10px 12px;
+  border-radius:10px;
+  margin-bottom:16px;
+}
+
+/* BUTTON */
+
+.upi-btn{
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:white;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.upi-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(34,197,94,0.35);
+}
+
+.upi-btn:active{
+  transform:scale(0.97);
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+  .upi-container{
+    width:100%;
+    padding:26px 22px;
+  }
+}

@@ -1,0 +1,116 @@
+/* PAGE BACKGROUND */
+
+.openacc-page{
+  background:#f3f6fb;
+  min-height:100vh;
+  padding:50px 20px;
+  display:flex;
+  justify-content:center;
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* MAIN CARD */
+
+.openacc-container{
+  width:520px;
+  background:white;
+  padding:40px 45px;
+  border-radius:18px;
+  box-shadow:0 14px 35px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+
+.openacc-header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.openacc-header h2{
+  margin:0;
+  font-size:26px;
+  color:#111827;
+}
+
+.openacc-header p{
+  margin-top:8px;
+  font-size:14px;
+  color:#6b7280;
+}
+
+/* FORM */
+
+.openacc-form{
+  display:flex;
+  flex-direction:column;
+}
+
+/* FORM GROUP */
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-group label{
+  display:block;
+  font-size:13px;
+  font-weight:600;
+  color:#374151;
+  margin-bottom:6px;
+}
+
+/* INPUTS */
+
+.form-group input,
+.form-group select{
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid #d1d5db;
+  font-size:14px;
+  transition:0.25s;
+  background:#fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+  outline:none;
+  border-color:#22c55e;
+  background:white;
+  box-shadow:0 0 0 3px rgba(34,197,94,0.2);
+}
+
+/* SECURITY INFO */
+
+.security-info{
+  font-size:13px;
+  background:#f0fdf4;
+  color:#166534;
+  border:1px solid #bbf7d0;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.create-btn{
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:white;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.create-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(34,197,94,0.35);
+}
+
+.create-btn:active{
+  transform:scale(0.97);
+}

@@ -1,24 +1,118 @@
+/* ===== Page Layout ===== */
+
 .account-container{
-  width: 350px;
+  max-width: 600px;
   margin: auto;
+  padding-top: 10px;
 }
+
+.account-container h2{
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* ===== Account Card ===== */
 
 .account-card{
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin: 12px 0;
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
   cursor: pointer;
-  transition: 0.2s;
-  background: #fff;
+  position: relative;
+
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
 }
 
+/* Hover effect (banking feel) */
 .account-card:hover{
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+  border-color: #22c55e;
 }
+
+/* ===== Account Type ===== */
+
+.account-card h3{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ===== Account Number ===== */
+
+.account-card p{
+  margin: 6px 0;
+  font-size: 14px;
+  color: #6b7280;
+  letter-spacing: 1px;
+}
+
+/* ===== Balance Highlight ===== */
 
 .balance{
-  font-weight: bold;
-  color: green;
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+/* ===== Decorative Card Chip (looks like ATM card) ===== */
+
+.account-card::before{
+  content:"";
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:48px;
+  height:34px;
+  border-radius:6px;
+  background: linear-gradient(135deg,#d1d5db,#9ca3af);
+  opacity:0.6;
+}
+
+/* subtle shine */
+.account-card::after{
+  content:"";
+  position:absolute;
+  top:-40%;
+  right:-20%;
+  width:200px;
+  height:200px;
+  background: rgba(255,255,255,0.35);
+  transform: rotate(45deg);
+}
+
+/* ===== When No Account ===== */
+
+.no-account{
+  text-align: center;
+  margin-top: 40px;
+}
+
+.no-account p{
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.open-account-btn{
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#22c55e,#16a34a);
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.open-account-btn:hover{
+  background: linear-gradient(135deg,#16a34a,#15803d);
+  transform: translateY(-2px);
 }

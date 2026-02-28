@@ -1,6 +1,9 @@
 import {  useNavigate } from "react-router-dom";
 import { useState } from "react";
 import api from '../../api';
+import '../styles/deposite.css'
+
+
 
 
 export function Deposit() {
@@ -23,7 +26,6 @@ export function Deposit() {
       navigate("/transaction-success", { state: { transaction: response.data } })
      
 
-
     } catch (err) 
     {
         console.log("Deposite Failed " , err)
@@ -32,33 +34,57 @@ export function Deposit() {
 
 
  
-  return (
-    <div>
+ return (
+  <div className="deposit-page">
 
-      <form onSubmit={handelDeposit}>
+    <div className="deposit-container">
 
+      <div className="deposit-header">
+        <h2>Deposit Money</h2>
+        <p>Add funds securely to your account</p>
+      </div>
 
-        <input
-          className=""
-          type="number"
-          onChange={e => setAmount(e.target.value)}
-          placeholder="Enter Amount"
-          required
-        />
+      {/* Optional Account Info */}
+      <div className="account-info-box">
+        <div>
+          <span className="info-label">Account Number</span>
+          <p> •••• {accNum.slice(-4)}</p>
+        </div>
+      </div>
 
-        <input
-          className=""
-          type="password"
-          onChange={e => setMpin(e.target.value)}
-          placeholder="MPIN"
-          required
-        />
+      <form className="deposit-form" onSubmit={handelDeposit}>
 
-        <button className="" >
-          Deposit
+        <div className="form-group">
+          <label>Amount</label>
+          <div className="amount-input">
+            
+            <input
+              type="number"
+              onChange={e => setAmount(e.target.value)}
+              placeholder="Enter amount"
+              required
+            />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <label>MPIN</label>
+          <input
+            type="password"
+            maxLength="6"
+            onChange={e => setMpin(e.target.value)}
+            placeholder="Enter 6-digit MPIN"
+            required
+          />
+        </div>
+
+        <button className="deposit-btn">
+          Confirm Deposit
         </button>
 
       </form>
+
     </div>
-  );
+  </div>
+);
 }

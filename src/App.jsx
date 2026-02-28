@@ -13,9 +13,11 @@ import { Deposit } from "./pages/Deposit";
 import{Withdraw} from './pages/Withdraw'
 import { ImpsTransfer } from "./pages/ImpsTransfer";
 import { UpiTransfer } from "./pages/UpiTransfer";
-import { Transactions } from "./pages/Transactions";
+import { Statement } from "./pages/Statement";
 import { AccountProtectedRoute } from "./components/AccountProtectedRoute";
 import { Profile } from "./pages/profile";
+import { Transactions } from "./pages/Transactions";
+
 function App() {
 
 
@@ -28,6 +30,7 @@ function App() {
         
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+         <Route path="/" element={<Welcome />} />
 
         
         <Route element={<Layout />}>
@@ -39,11 +42,12 @@ function App() {
           <Route path="/withdraw" element={<AccountProtectedRoute><Withdraw /></AccountProtectedRoute>} />
           <Route path="/imps-transfer" element={<AccountProtectedRoute><ImpsTransfer /></AccountProtectedRoute>} />
           <Route path="/upi-transfer" element={<AccountProtectedRoute><UpiTransfer /></AccountProtectedRoute>} />
+          <Route path="/statement" element={<AccountProtectedRoute><Statement /></AccountProtectedRoute>} />
           <Route path="/transactions" element={<AccountProtectedRoute><Transactions /></AccountProtectedRoute>} />
           <Route path="/transaction-success" element={<AccountProtectedRoute><TransactionSuccess /></AccountProtectedRoute>} />
         </Route>
 
-        <Route path="/" element={<Navigate to="/login" />} />
+       
         <Route path="*" element={<PageNotFound />} />
 
       </Routes>

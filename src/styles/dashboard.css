@@ -1,151 +1,220 @@
-/* Page background (very important) */
+/* ===== Page Background ===== */
+
 body{
-  background: #f3f6fb;
+  background: #f3f4f6;
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* Container */
+/* ===== Container ===== */
+
 .dashboard-container{
-  padding: 35px;
+  padding: 35px 20px;
   max-width: 1100px;
   margin: auto;
 }
 
-/* ===== Account Summary Card ===== */
+/* ===================================================== */
+/*                 ACCOUNT SUMMARY CARD                  */
+/* ===================================================== */
 
 .account-card-main{
-  background: linear-gradient(135deg,#1a237e,#1976d2);
-  color: white;
-  padding: 28px;
-  border-radius: 16px;
+  background: #ffffff;
+  color: #111827;
+  padding: 26px;
+  border-radius: 18px;
   margin-bottom: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
   position: relative;
   overflow: hidden;
+  border: 1px solid #e5e7eb;
 }
 
-/* subtle banking card shine */
+/* subtle glass shine */
 .account-card-main::after{
   content:"";
   position:absolute;
-  top:-50%;
-  right:-20%;
-  width:300px;
-  height:300px;
-  background:rgba(255,255,255,0.08);
-  transform:rotate(45deg);
+  top:-60%;
+  right:-25%;
+  width:280px;
+  height:280px;
+  background: rgba(0,0,0,0.03);
+  transform: rotate(45deg);
 }
 
 /* account type */
 .account-card-main h2{
   margin:0;
-  font-weight:500;
-  letter-spacing:0.5px;
+  font-weight:600;
+  font-size:22px;
+  color:#1f2937;
 }
 
-/* masked account number */
+/* account number + status */
 .account-card-main p{
   margin:6px 0;
-  opacity:0.9;
+  font-size:14px;
+  color:#6b7280;
+  letter-spacing:0.5px;
 }
 
 /* balance highlight */
 .account-card-main h3{
   margin-top:18px;
-  font-size:28px;
+  font-size:30px;
   font-weight:700;
-  color:#ffeb3b;
+  color:#16a34a;
 }
 
-/* ===== Quick Actions Section ===== */
+/* UPI id */
+.account-card-main .upi{
+  margin-top:10px;
+  font-size:14px;
+  color:#374151;
+  font-weight:500;
+}
+
+/* ===================================================== */
+/*                    QUICK ACTIONS                       */
+/* ===================================================== */
 
 .actions{
   display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap:40px;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
 }
 
-/* action cards instead of buttons */
+/* action cards */
 .actions button{
-  height:145px;
- 
+  height:120px;
   border:none;
-  border-radius:14px;
+  border-radius:16px;
   background:white;
-  color:#1a237e;
-  font-size:25px;
+  color:#111827;
+  font-size:16px;
   font-weight:600;
   cursor:pointer;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  box-shadow:0 6px 16px rgba(0,0,0,0.06);
   transition: all 0.25s ease;
+  border:1px solid #e5e7eb;
   position:relative;
+  padding-top:40px;
 }
 
-/* icon placeholder */
-/* .actions button::before{
+/* small icon circle */
+.actions button::before{
   content:"";
   position:absolute;
   top:18px;
   left:18px;
-  width:38px;
-  height:38px;
-  border-radius:10px;
-  background:#e3f2fd;
-} */
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#ecfdf5;
+}
 
 /* hover animation */
 .actions button:hover{
-  transform: translateY(-5px);
-  box-shadow:0 12px 22px rgba(0,0,0,0.18);
-  background:#f8fbff;
+  transform: translateY(-6px);
+  box-shadow:0 16px 30px rgba(0,0,0,0.12);
+  border-color:#22c55e;
 }
 
-/* active click feel */
+/* click feel */
 .actions button:active{
-  transform:scale(0.97);
+  transform: scale(0.97);
 }
 
-/* ===== Section Titles ===== */
+/* ===================================================== */
+/*                    SECTION TITLE                       */
+/* ===================================================== */
 
 .section-title{
-  margin: 25px 0 12px;
+  margin: 30px 0 12px;
   font-size:20px;
-  font-weight:600;
-  color:#1a237e;
+  font-weight:700;
+  color:#111827;
 }
 
-/* ===== Transaction List Preview ===== */
+/* ===================================================== */
+/*                TRANSACTION PREVIEW CARD                */
+/* ===================================================== */
 
 .transaction-list{
   background:white;
-  border-radius:14px;
+  border-radius:16px;
   padding:15px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  border:1px solid #e5e7eb;
 }
 
+/* single transaction row */
 .transaction-item{
   display:flex;
   justify-content:space-between;
-  padding:12px 10px;
-  border-bottom:1px solid #eee;
+  align-items:center;
+  padding:14px 10px;
+  border-bottom:1px solid #f1f5f9;
 }
 
 .transaction-item:last-child{
   border-bottom:none;
 }
 
-.credit{
-  color:#2e7d32;
+/* left side */
+.tx-details{
+  display:flex;
+  flex-direction:column;
+}
+
+.tx-title{
+  font-size:14px;
   font-weight:600;
+  color:#1f2937;
+}
+
+.tx-date{
+  font-size:12px;
+  color:#6b7280;
+}
+
+/* right side amounts */
+.credit{
+  color:#16a34a;
+  font-weight:700;
 }
 
 .debit{
-  color:#c62828;
-  font-weight:600;
+  color:#dc2626;
+  font-weight:700;
 }
-.card-img{
-  width: 250px;
-  height: 150px;
-  padding-bottom: 10px;
-  cursor: pointer;
+
+/* ===================================================== */
+/*                EMPTY TRANSACTION STATE                 */
+/* ===================================================== */
+
+.no-tx{
+  text-align:center;
+  padding:25px;
+  color:#6b7280;
+  font-size:14px;
+}
+
+/* ===================================================== */
+/*                  RESPONSIVE                           */
+/* ===================================================== */
+
+@media (max-width: 600px){
+
+  .dashboard-container{
+    padding:20px 12px;
+  }
+
+  .account-card-main h3{
+    font-size:24px;
+  }
+
+  .actions button{
+    height:100px;
+    font-size:14px;
+  }
 }

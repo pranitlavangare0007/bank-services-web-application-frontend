@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from '../../api';
-import "../styles/login.css";   
+import "../styles/registration.css";   
 
 export  function Register() {
   const [username, setUsername] = useState("");
@@ -28,77 +28,96 @@ export  function Register() {
   };
 
   return (
-    <div className="login-page">
-      <div className="login-card">
+  <div className="register-page">
 
-        <h2 className="login-title">Create Account</h2>
-        <p className="login-subtitle">
-          Join the Bank platform
-        </p>
+    <div className="register-container">
 
-        <form onSubmit={handleRegister}>
+      <div className="register-header">
+        <h1>Open Your PayPulse Account</h1>
+        <p>Create a secure digital banking profile</p>
+      </div>
 
-        <input
-          className="login-input"
-          onChange={e => setUsername(e.target.value)}
-          placeholder="Username"
-          required
-        />
+      <form className="register-form" onSubmit={handleRegister}>
 
-        <input
-          className="login-input"
-          type="password"
-          onChange={e => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-        />
+        {/* ACCOUNT CREDENTIALS */}
+        <div className="form-section">
+          <h3>Login Credentials</h3>
 
-        <input
-          className="login-input"
-          onChange={e => setName(e.target.value)}
-          placeholder="Name"
-          required
-        />
+          <div className="form-grid">
+            <div className="form-group">
+              <label>Username</label>
+              <input
+                type="text"
+                onChange={e => setUsername(e.target.value)}
+                required
+              />
+            </div>
 
-        <input
-          className="login-input"
-          type="email"
-          onChange={e => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-
-        <input
-          className="login-input"
-          onChange={e => setAddress(e.target.value)}
-          placeholder="Address"
-          required
-        />
-
-          <input
-          className="login-input"
-          onChange={e => setPhoneNumber(e.target.value)}
-          placeholder="Phone Number"
-          required
-        />
-
-        <button className="login-btn" >
-          Register
-        </button>
-
-        </form>
-
-        <div className="login-footer">
-          Already have an account?{" "}
-          <span
-            className="login-link"
-            onClick={() => navigate("/login")}
-          >
-            Login
-          </span>
+            <div className="form-group">
+              <label>Password</label>
+              <input
+                type="password"
+                onChange={e => setPassword(e.target.value)}
+                required
+              />
+            </div>
+          </div>
         </div>
 
-      </div>
+        {/* PERSONAL DETAILS */}
+        <div className="form-section">
+          <h3>Personal Information</h3>
+
+          <div className="form-grid">
+            <div className="form-group full">
+              <label>Full Name</label>
+              <input
+                type="text"
+                onChange={e => setName(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Email Address</label>
+              <input
+                type="email"
+                onChange={e => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Phone Number</label>
+              <input
+                type="text"
+                onChange={e => setPhoneNumber(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group full">
+              <label>Residential Address</label>
+              <input
+                type="text"
+                onChange={e => setAddress(e.target.value)}
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <button className="register-btn">Create Bank Account</button>
+
+        <p className="register-footer">
+          Already registered?
+          <span onClick={() => navigate("/login")}>
+            Login here
+          </span>
+        </p>
+
+      </form>
     </div>
-  );
+  </div>
+);
 }

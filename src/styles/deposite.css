@@ -1,0 +1,172 @@
+/* PAGE BACKGROUND */
+
+.deposit-page{
+  background:#f1f5f9;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:50px 20px;
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* MAIN CARD */
+
+.deposit-container{
+  width:520px;
+  background:white;
+  padding:38px 42px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  transition:.3s;
+}
+
+/* HEADER */
+
+.deposit-header{
+  text-align:center;
+  margin-bottom:26px;
+}
+
+.deposit-header h2{
+  margin:0;
+  color:#111827;
+  font-size:26px;
+}
+
+.deposit-header p{
+  color:#6b7280;
+  font-size:14px;
+  margin-top:6px;
+}
+
+/* ACCOUNT BOX */
+
+.account-info-box{
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:14px 18px;
+  margin-bottom:24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.info-label{
+  font-size:12px;
+  color:#6b7280;
+  display:block;
+}
+
+.account-info-box p{
+  margin:0;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:2px;
+  color:#111827;
+}
+
+/* FORM */
+
+.deposit-form{
+  display:flex;
+  flex-direction:column;
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:6px;
+  font-size:13px;
+  font-weight:600;
+  color:#374151;
+}
+
+/* AMOUNT INPUT */
+
+.amount-input{
+  position:relative;
+}
+
+/*  */
+
+.amount-input input{
+  width:100%;
+  padding:13px 13px 13px 28px;
+  border-radius:10px;
+  border:1px solid #d1d5db;
+  background:#fafafa;
+  font-size:14px;
+  transition:.25s;
+}
+
+.amount-input input:focus{
+  outline:none;
+  border-color:#22c55e;
+  background:white;
+  box-shadow:0 0 0 3px rgba(34,197,94,0.18);
+}
+
+/* MPIN */
+
+.form-group input[type="password"]{
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid #d1d5db;
+  background:#fafafa;
+  transition:.25s;
+}
+
+.form-group input[type="password"]:focus{
+  outline:none;
+  border-color:#22c55e;
+  background:white;
+  box-shadow:0 0 0 3px rgba(34,197,94,0.18);
+}
+
+/* SECURITY NOTE */
+
+.deposit-form::after{
+  content:"🔐 Transactions are secured with MPIN verification";
+  font-size:12px;
+  color:#6b7280;
+  margin-top:6px;
+  margin-bottom:14px;
+}
+
+/* BUTTON */
+
+.deposit-btn{
+  margin-top:10px;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:white;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.deposit-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(34,197,94,0.35);
+}
+
+.deposit-btn:active{
+  transform:scale(0.97);
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+  .deposit-container{
+    width:100%;
+    padding:28px 22px;
+  }
+}

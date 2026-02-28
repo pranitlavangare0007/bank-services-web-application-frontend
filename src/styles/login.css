@@ -1,167 +1,166 @@
+/* ================= PAGE LAYOUT ================= */
 
-.login-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(120deg, #eef2ff, #f5f7fb);
-  font-family: "Segoe UI", sans-serif;
+.bank-login-page{
+  height:100vh;
+  display:flex;
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+  background:#f3f6fb;
 }
 
+/* ================= LEFT PANEL ================= */
 
-.login-card {
-  width: 380px;
-  background: #ffffff;
-  padding: 2.8rem;
-  border-radius: 16px;
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  animation: fadeIn 0.6s ease;
+.bank-login-left{
+  width:50%;
+  background: linear-gradient(180deg,#0f172a,#111827);
+  color:white;
+  padding:80px 70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
-.login-title {
-  margin-bottom: 6px;
-  font-size: 26px;
-  font-weight: 700;
-  color: #1f2933;
+/* branding */
+
+.brand-logo{
+  font-size:42px;
+  font-weight:700;
+  color:#22c55e;
+  letter-spacing:1px;
 }
 
-.login-subtitle {
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 28px;
+.brand-tagline{
+  margin-top:10px;
+  color:#cbd5e1;
+  font-size:18px;
 }
 
-.login-input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 14px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  outline: none;
-  font-size: 14px;
-  background: #fafafa;
-  transition: 0.2s;
+/* feature list */
+
+.bank-features{
+  margin-top:60px;
 }
 
-.login-input:focus {
-  border-color: #4f7cff;
-  background: #ffffff;
-  box-shadow: 0 0 0 2px rgba(79, 124, 255, 0.15);
+.feature{
+  margin-bottom:35px;
 }
 
-.login-btn {
-  width: 100%;
-  padding: 12px;
-  background: #4f7cff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.25s;
+.feature h3{
+  margin-bottom:6px;
+  font-size:20px;
+  font-weight:600;
 }
 
-.login-btn:hover {
-  background: #3b66e0;
+.feature p{
+  color:#94a3b8;
+  font-size:15px;
 }
 
+/* ================= RIGHT PANEL ================= */
 
-.login-footer {
-  font-size: 14px;
-  margin-top: 16px;
-  color: #4b5563;
+.bank-login-right{
+  width:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f8fafc;
 }
 
-.login-link {
-  color: #4f7cff;
-  font-weight: 600;
-  cursor: pointer;
+/* form */
+
+.login-form{
+  width:360px;
 }
 
-.login-link:hover {
-  text-decoration: underline;
+.login-title{
+  font-size:28px;
+  font-weight:700;
+  color:#111827;
+  margin-bottom:8px;
 }
 
-
-.login-divider {
-  margin: 22px 0;
-  font-size: 12px;
-  color: #9ca3af;
-  position: relative;
+.login-subtitle{
+  font-size:14px;
+  color:#6b7280;
+  margin-bottom:30px;
 }
 
-.login-divider::before,
-.login-divider::after {
-  content: "";
-  position: absolute;
-  width: 40%;
-  height: 1px;
-  background: #e5e7eb;
-  top: 50%;
+/* labels */
+
+.login-form label{
+  display:block;
+  font-size:13px;
+  color:#374151;
+  margin-bottom:6px;
+  margin-top:18px;
 }
 
-.login-divider::before {
-  left: 0;
+/* inputs */
+
+.login-input{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #d1d5db;
+  background:white;
+  font-size:14px;
+  transition:0.25s;
 }
 
-.login-divider::after {
-  right: 0;
+.login-input:focus{
+  outline:none;
+  border-color:#22c55e;
+  box-shadow:0 0 0 3px rgba(34,197,94,0.2);
 }
 
+/* button */
 
-.google-btn {
-  width: 100%;
-  padding: 12px;
-  background: #f3f4f6;
-  color: #374151;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.25s;
+.login-btn{
+  width:100%;
+  margin-top:28px;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:white;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.25s;
 }
 
-.google-btn:hover {
-  background: #e5e7eb;
+.login-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(34,197,94,0.35);
 }
 
-.google-link {
-  text-decoration: none;
+/* footer */
+
+.login-footer{
+  margin-top:20px;
+  font-size:14px;
+  color:#6b7280;
 }
 
+.login-link{
+  color:#16a34a;
+  font-weight:600;
+  margin-left:6px;
+  cursor:pointer;
+}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
+.login-link:hover{
+  text-decoration:underline;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .bank-login-left{
+    display:none;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .bank-login-right{
+    width:100%;
   }
-}
-.logout-btn {
-  padding: 10px 18px;
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.35);
-  transition: all 0.25s ease;
-}
-
-.logout-btn:hover {
-  background: linear-gradient(135deg, #dc2626, #b91c1c);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(239, 68, 68, 0.45);
-}
-
-.logout-btn:active {
-  transform: scale(0.96);
 }
