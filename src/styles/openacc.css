@@ -2,7 +2,7 @@
 
 .openacc-page{
   background:#f3f6fb;
-  min-height:100vh;
+  /* min-height:100vh; */
   padding:50px 20px;
   display:flex;
   justify-content:center;
@@ -13,6 +13,7 @@
 
 .openacc-container{
   width:520px;
+  height: 600px;
   background:white;
   padding:40px 45px;
   border-radius:18px;

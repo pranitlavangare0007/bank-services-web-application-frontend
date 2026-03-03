@@ -64,8 +64,8 @@ export function Welcome() {
         </div>
 
         <div className="feature-card">
-          <h3>Smart Statements</h3>
-          <p>View last transactions and download PDF bank statements anytime.</p>
+          <h3>Account Activity</h3>
+          <p>Check your latest account transactions, including deposits, withdrawals, UPI and IMPS transfers.</p>
         </div>
 
       </section>

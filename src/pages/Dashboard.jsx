@@ -35,6 +35,8 @@ export function Dashboard() {
 
     fetchAccount();
 
+   
+
   }, [accNum, navigate]);
 
   if (loading) {
@@ -81,6 +83,7 @@ export function Dashboard() {
         <section className="actions-section">
 
           <h3 className="section-title">Quick Services</h3>
+          
 
           <div className="actions">
 

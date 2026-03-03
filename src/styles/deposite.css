@@ -2,7 +2,7 @@
 
 .deposit-page{
   background:#f1f5f9;
-  min-height:100vh;
+  /* min-height:100vh; */
   display:flex;
   justify-content:center;
   padding:50px 20px;

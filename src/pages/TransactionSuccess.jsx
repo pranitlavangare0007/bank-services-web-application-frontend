@@ -12,6 +12,13 @@ export  function TransactionSuccess() {
     return <h2>Invalid Transaction</h2>;
   }
 
+   const formatDate = (time) => {
+        return new Date(time).toLocaleString("en-IN", {
+            dateStyle: "medium",
+            timeStyle: "short"
+        });
+    };
+
   return (
     <div className="success-container">
 
@@ -31,7 +38,7 @@ export  function TransactionSuccess() {
 
         <p><strong>Updated Balance:</strong> ₹ {tx.balance}</p>
 
-        <p><strong>Date & Time:</strong> {tx.time}</p>
+        <p><strong>Date & Time:</strong> {formatDate(tx.time)}</p>
 
         <button onClick={() => navigate("/dashboard")}>
           Back to Dashboard
