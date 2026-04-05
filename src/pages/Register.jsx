@@ -33,12 +33,13 @@ export function Register() {
   const handleOtpVerification = async (event) => {
     event.preventDefault();
     try {
-      await api.post(`/verify-otp`, { email, otp });
+      // await api.post(`/verify-otp`, { email, otp });
+      await api.post(`verify-otp?email=${email}&otp=${otp}`);
       setOtpVerified(true);
       alert("Email verified");
     }
     catch (err) {
-
+      
       console.log(err)
     }
   };
@@ -46,7 +47,8 @@ export function Register() {
   const handelEmailVerification = async (event) => {
     event.preventDefault();
     try {
-      const response = await api.post(`/send-otp/${email}`)
+      // await api.post(`/send-otp/${email}`)
+        const response = await api.post(`send-otp?email=${email}`);
       setOtpSent(true)
       setTimer(30);
       setOtpVerified(false);
@@ -66,6 +68,7 @@ export function Register() {
       }
 
     } catch (err) {
+      alert("User already exists")
       console.log("User already exists", err);
     }
   };
